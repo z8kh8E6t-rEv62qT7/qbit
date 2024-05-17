@@ -129,15 +129,8 @@ jobs:
           mkdir upload/cmake/libtorrent
           cp libtorrent/build/compile_commands.json upload/cmake/libtorrent
 
-      - uses: DuckSoft/create-7z-action@v1.0
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v3
         with:
-          pathSource: "upload"
-          pathTarget: ./upload.7z
-      
-      - uses: svenstaro/upload-release-action@v2
-        with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: upload.7z
-          asset_name: qBittorrent-CI_Windows.7z
-          tag: ${{ github.ref }}
-          overwrite: true
+          name: qBittorrent-CI_Ubuntu-x64_${{ matrix.qbt_gui }}_libtorrent-${{ matrix.libt_version }}_Qt-${{ matrix.qt_version }}
+          path: upload

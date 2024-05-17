@@ -26,10 +26,10 @@ jobs:
       vpkg_triplet_path: "${{ github.workspace }}/../triplets_overlay"
 
     steps:
-      - uses: actions/checkout@v1  
+      - uses: actions/checkout@v4
         with:
-          repository: z8kh8E6t-rEv62qT7/qbit
-          token: ${{ secrets.ACCESS_TOKEN }}
+          fetch-depth: 2
+      - run: git checkout HEAD^
 
       - name: Setup devcmd
         uses: ilammy/msvc-dev-cmd@v1

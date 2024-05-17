@@ -28,7 +28,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1  
         with:
-          repository: organization_name/repo_name
+          repository: z8kh8E6t-rEv62qT7/qbit
           token: ${{ secrets.ACCESS_TOKEN }}
 
       - name: Setup devcmd

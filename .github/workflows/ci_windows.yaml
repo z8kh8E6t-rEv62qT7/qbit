@@ -1,6 +1,7 @@
 name: CI - Windows
 
-on: [pull_request, push]
+on:
+  workflow_dispatch:
 
 permissions: {}
 

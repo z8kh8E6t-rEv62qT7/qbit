@@ -57,8 +57,8 @@ public:
       return nullptr;
 
     // ignore private torrents
-    if (th.torrent_file() && th.torrent_file()->priv())
-      return nullptr;
+    // if (th.torrent_file() && th.torrent_file()->priv())
+    //   return nullptr;
 
     return std::make_shared<peer_action_plugin>([this](auto&&... args) { return filter(args...); }, drop_peer_connection);
   }

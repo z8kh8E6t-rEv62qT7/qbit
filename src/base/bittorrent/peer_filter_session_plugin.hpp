@@ -50,7 +50,7 @@ public:
   {
   }
 
-  std::shared_ptr<lt::torrent_plugin> new_torrent(const lt::torrent_handle& th, client_data) override
+  std::shared_ptr<lt::torrent_plugin> new_torrent(const lt::torrent_handle&, client_data) override
   {
     // do not waste CPU and memory for useless objects when no filters are enabled
     if (!m_blacklist && !m_whitelist)
